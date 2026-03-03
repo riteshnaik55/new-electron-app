@@ -9,7 +9,36 @@
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {
+    "ag-grid-community": "^29.3.2"
+  },
   "devDependencies": {
     "electron": "^40.6.1"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "plugins": [
+        [
+          "@electron-forge/plugin-webpack",
+          {
+            "mainConfig": "./webpack.main.config.js",
+            "renderer": {
+              "config": "./webpack.renderer.config.js",
+              "entryPoints": [
+                {
+                  "html": "./index.html",
+                  "js": "./renderer.js",
+                  "preload": {
+                    "js": "./preload.js"
+                  },
+                  "name": "main_window"
+                }
+              ]
+            }
+          }
+        ]
+      ]
+    }
   }
 }

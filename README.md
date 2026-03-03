@@ -1,13 +1,13 @@
-# New Electron App
+# Electron To Do List App
 
-This is a Electron app used for exploring the Electron framewrok
+This is a Electron app used for exploring the Electron framework
 
 ## Installation
 
 Use the npm package manager to install.
 
 ```bash
-npm install electron
+npm install
 ```
 
 ## Usage

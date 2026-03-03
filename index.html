@@ -2,21 +2,38 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
+    <title>Electron TO-DO</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/ag-grid-community@29.3.2/styles/ag-grid.css"
     />
-    <meta
-      http-equiv="X-Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/ag-grid-community@29.3.2/styles/ag-theme-alpine.css"
     />
-    <title>Hello from Electron renderer!</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Hello this is my 1st Electron app!!</h1>
-    <p>👋</p>
-    <p id="info"></p>
+    <div class="container">
+      <h1>Electron TO-DO</h1>
+      <div class="btn-container">
+        <input id="new-task" placeholder="New task" />
+        <select id="new-priority">
+          <option value="Low">Low</option>
+          <option value="Medium" selected>Medium</option>
+          <option value="High">High</option>
+        </select>
+        <input id="new-due" type="date" />
+        <button id="add-btn" class="btn add-btn">Add</button>
+      </div>
+      <div style="width:100%;display:flex;gap:.5rem;margin-top:.5rem;">
+        <button id="save-btn" class="btn">Save</button>
+        <button id="restore-btn" class="btn">Restore</button>
+      </div>
+      <div class="divider"></div>
+      <div id="grid" class="ag-theme-alpine"></div>
+    </div>
+    <script src="https://unpkg.com/ag-grid-community@29.3.2/dist/ag-grid-community.min.js"></script>
+    <script src="renderer.js"></script>
   </body>
-  <script src="./renderer.js"></script>
 </html>
